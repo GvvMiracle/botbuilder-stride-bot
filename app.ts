@@ -11,13 +11,17 @@ let bot = new StrideBot(strideClientId, strideClientSecret);
 let app = express();
 app.use(bodyParser.json());
 
+// This webhook will be called by stride when the bot is mentioned in a channel or dm
 app.post('/bot-mention', (req: express.Request, res: express.Response) => {
     let jwtToken = req.header('Authorization').split(' ')[1];
     let message: StrideBotMentionMessage = req.body;
 
-    //Verify & parse JWt token
+    // Check that the JWT token is valid & signed
     let { verifiedToken } = api.parseVerifyJwtToken(jwtToken);
     bot.handleMention(verifiedToken, message);
 
-    return res.status(200).send();
+    // Send 200 to signal that we processed the request
+    res.status(200).send();
 });
+
+app.listen(3000);

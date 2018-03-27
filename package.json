@@ -1,5 +1,5 @@
 {
-  "name": "azure-stride-bot",
+  "name": "botbuilder-stride-bot",
   "version": "0.1.0",
   "description": "A simple Stride bot using Bot SDK",
   "main": "index.js",
