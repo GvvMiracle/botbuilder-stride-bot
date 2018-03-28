@@ -18,7 +18,7 @@ export class StrideBot {
         let intents = new IntentDialog({ recognizers: [this.recognizer] })
             .matches('Greeting', (session) => this.handleGreetingIntent(session))
             .matches('<some other intent>', (session, dialogArgs) => session.beginDialog('someIntentDialog', dialogArgs))
-            .matches('Help', (session) => {
+            .matches('Utilities.Help', (session) => {
                 let doc = new Document({ version: 1 });
                 doc.paragraph().text("Here's what you can say");
                 doc.bulletList().textItem(" ABC");

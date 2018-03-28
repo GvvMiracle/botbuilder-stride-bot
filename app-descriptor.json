@@ -1,0 +1,18 @@
+{
+    "baseUrl": "{{ngrok-url}}",
+    "key": "botbuilder-test",
+    "lifecycle": {
+        "installed": "/lifecycle",
+        "uninstalled": "/lifecycle"
+    },
+    "modules": {
+        "chat:bot": [
+            {
+                "key": "bot",
+                "mention": {
+                    "url": "/bot-mention"
+                }
+            }
+        ]
+    }
+}

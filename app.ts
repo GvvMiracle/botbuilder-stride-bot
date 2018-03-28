@@ -10,6 +10,12 @@ let api = new AtlassianApi(strideClientId, strideClientSecret);
 let bot = new StrideBot(strideClientId, strideClientSecret);
 let app = express();
 app.use(bodyParser.json());
+app.use(express.static('./dist'))
+
+app.post('/lifecycle', (req: express.Request, res: express.Response) => {
+    console.log('Lifecycle Event', req.body);
+    res.status(200).send();
+});
 
 // This webhook will be called by stride when the bot is mentioned in a channel or dm
 app.post('/bot-mention', (req: express.Request, res: express.Response) => {
