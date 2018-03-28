@@ -1,10 +1,7 @@
 import { ConversationAddress, StrideBotMentionMessage } from "./strideEntities";
 import { Document } from "adf-builder";
-import { IMessage, LuisRecognizer, IntentDialog, UniversalBot, Session, IIntentRecognizerResult, IDialogResult, Prompts } from "botbuilder";
+import { IMessage, LuisRecognizer, IntentDialog, UniversalBot, Session, IIntentRecognizerResult, IDialogResult, Prompts, MemoryBotStorage } from "botbuilder";
 import { StrideBotConnector } from "./strideBotConnector";
-import { DynamoBotStorage } from 'botbuilder-storage';
-
-import * as DynamoDB from 'aws-sdk/clients/dynamodb';
 
 export class StrideBot {
     private bot: UniversalBot;
@@ -16,6 +13,7 @@ export class StrideBot {
     }
 
     registerBot(clientId: string, clientSecret: string): any {
+        //Connect to LUIS and create intent <-> dialog mapping
         this.recognizer = new LuisRecognizer('<your luis endpoint>');
         let intents = new IntentDialog({ recognizers: [this.recognizer] })
             .matches('Greeting', (session) => this.handleGreetingIntent(session))
@@ -36,26 +34,11 @@ export class StrideBot {
             });
 
         this.botConnector = new StrideBotConnector(clientId, clientSecret);
-
-        //Fill with your keys & info
-        const dbClient = new DynamoDB({
-            region: "",
-            accessKeyId: "",
-            secretAccessKey: ""
-        });
-
-        const dbSettings = {
-            tableName: "<your table>",
-            primaryKey: "id",
-            ttl: {
-                userData: 3600 * 24 * 7,
-                conversationData: 3600 * 24 * 7,
-                privateConversationData: 3600 * 24 * 7
-            }
-        };
-
         this.bot = new UniversalBot(this.botConnector);
-        this.bot.set('storage', new DynamoBotStorage(dbClient, dbSettings)/*new MemoryBotStorage()*/);
+
+        //Switch this to persistent storage (e.g. AzureTables or AWS DynamoDb)
+        this.bot.set('storage', new MemoryBotStorage());
+
         this.bot.dialog('/', intents);
         this.bot.dialog('someIntentDialog', this.getSomeIntentDialog())
             .cancelAction('cancelAction', "Ok, I won't create continue!", {
