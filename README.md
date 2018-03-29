@@ -31,4 +31,5 @@ Simple example on how to use Microsoft Bot Framework &amp; LUIS Recognizer with 
 5. Check that https://<**>.ngork.io/app-descriptor.json is reachable and contains the correct ngrok url
 6. Go to your Stride app (https://developer.atlassian.com/apps/) and enter the descriptor URL and click "Refresh"
 7. Go to any Stride channel and install the app using the installation URL (from the previous page)
-8. 
+8. Mention the bot with a greeting, like this:
+   ```@YourBotHandle Hi```
