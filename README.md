@@ -1,5 +1,5 @@
 # botbuilder-stride-bot
-Simple example on how to use Microsoft Bot Framework &amp; LUIS Recognizer with for a Stride bot
+Simple example on how to use Microsoft Bot Framework &amp; LUIS Recognizer with for a Stride bot. The CustomBotConnector implementation is by no means complete. It worked for all use-cases we had with our Stride bot, but if you are looking to use every single feature of the BotFramework, you'll need to do some more work (PR welcome).
 
 ## Getting started
 
@@ -57,7 +57,7 @@ Simple example on how to use Microsoft Bot Framework &amp; LUIS Recognizer with 
 
 ![image](https://user-images.githubusercontent.com/2111803/38095866-c064ea0c-3371-11e8-8b46-874a533c1f52.png)
 
-5. Check that https://<**>.ngork.io/app-descriptor.json is reachable and contains the correct ngrok url
+5. Check that https://<**>.ngrok.io/app-descriptor.json is reachable and contains the correct ngrok url
 6. Go to your Stride app (https://developer.atlassian.com/apps/) and enter the descriptor URL and click "Refresh"
 
 ![image](https://user-images.githubusercontent.com/2111803/38095895-d340614c-3371-11e8-8239-b6d731bd730b.png)
