@@ -16,8 +16,8 @@ Simple example on how to use Microsoft Bot Framework &amp; LUIS Recognizer with 
 
 ![image](https://user-images.githubusercontent.com/2111803/38095231-3b0a7cce-3370-11e8-858d-dd99b0582642.png)
 
-3. Provide title
-4. Select Stride API
+3. Provide a title
+4. Select "Stride API" to allow access from our app 
 5. Copy the apps' client id and secret to the variables in the app.ts file
 
 ![image](https://user-images.githubusercontent.com/2111803/38095350-93618908-3370-11e8-99cd-234e6676affb.png)
