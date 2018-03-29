@@ -4,7 +4,9 @@ Simple example on how to use Microsoft Bot Framework &amp; LUIS Recognizer with 
 ## Resources
 
 [Stride API Docs](https://developer.atlassian.com/cloud/stride/)
+
 [BotBuilder Docs](https://docs.microsoft.com/en-us/azure/bot-service/nodejs/bot-builder-nodejs-overview)
+
 [LUIS.ai Docs](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/home)
 
 ## Getting started
