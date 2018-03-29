@@ -3,6 +3,12 @@ Simple example on how to use Microsoft Bot Framework &amp; LUIS Recognizer with 
 
 ## Getting started
 
+### Prerequisites
+
+1. Clone this repo
+2. Open files with your favorite editor (VS Code, obviously)
+3. Install dependencies with ```yarn``` (or npm, if you must)
+
 ### Create Stride app
 
 1. Go to https://developer.atlassian.com/
