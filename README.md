@@ -47,7 +47,7 @@ Simple example on how to use Microsoft Bot Framework &amp; LUIS Recognizer with 
 
 ### Let's roll
 
-1. Build the app by executing "tsc" (typescript compiler)
+1. Build the app by executing "tsc" ([typescript compiler](http://www.typescriptlang.org/))
 2. Run "node ./dist/app.js"
 3. Start ngrok (ngrok http 3000)
 
