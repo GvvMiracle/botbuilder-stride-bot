@@ -1,6 +1,13 @@
 # botbuilder-stride-bot
 Simple example on how to use Microsoft Bot Framework &amp; LUIS Recognizer with for a Stride bot. The StrideBotConnector implementation is by no means a complete implementation of IConnector yet. It worked for all use-cases we had with our Stride bot, but if you are looking to use every single feature of the BotFramework, you'll need to do some more work (PR welcome).
 
+## Why?
+
+Using the BotFramework makes the following very easy:
+- Create complex dialog waterfall flows for the bot. For example, depending on user answers, request more information or providing a choice (using the “Prompt” functionality). Once you have the Stride connector from the repo, you can just work with the framework and don’t have to worry about session matching etc. You can also store session data (in this example in memory, but persistence is recommended, e.g. using AWS Dynamo DB).
+- On the other hand you can use LUIS.ai, which is basically the brains if you want, yes. It is capable of natural language processing and comes with a lot of predefined entities (e.g
+Dates, Cities, Artists..). You can also define custom entities and intents, and train it to get better over time. We use this heavily to allow meeting scheduling in our app. 
+
 ## Resources
 
 [Stride API Docs](https://developer.atlassian.com/cloud/stride/)
